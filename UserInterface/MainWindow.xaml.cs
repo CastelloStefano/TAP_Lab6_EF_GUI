@@ -26,8 +26,7 @@ namespace UserInterface
         public MainWindow()
         {
             InitializeComponent();
-
-
+            
         }
 
         private void ButtonReset_Click1(object sender, RoutedEventArgs e)
