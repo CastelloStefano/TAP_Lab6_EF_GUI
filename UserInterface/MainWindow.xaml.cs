@@ -38,6 +38,7 @@ namespace UserInterface
 
         private void ButtonConnect_Click1(object sender, RoutedEventArgs e)
         {
+            
             MessageBox.Show(Adminpwd.Password);
             Db = Factory.LoadBugTracking(null,Adminpwd.Password);
             UsrTable.Visibility = 0;
@@ -87,7 +88,7 @@ namespace UserInterface
 
         private void RadioButton_Checked(object sender, RoutedEventArgs e)
         {
-
+            
         }
     }
 }
