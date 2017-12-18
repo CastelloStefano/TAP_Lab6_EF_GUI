@@ -11,9 +11,19 @@
             <RowDefinition Height="115*"/>
             <RowDefinition Height="259*"/>
         </Grid.RowDefinitions>
-        <PasswordBox x:Name="Adminpwd" HorizontalAlignment="Left" Margin="10,84,0,0" VerticalAlignment="Top" Width="367" PasswordChar="#" Height="18"/>
-        <Button Grid.Row="0" x:Name="ButtonConnect" Content="Connect" HorizontalAlignment="Left" Margin="382,84,0,0" VerticalAlignment="Top" Width="75" Click="ButtonConnect_Click1" Height="18" FontWeight="Bold"/>
+        <PasswordBox x:Name="Adminpwd" HorizontalAlignment="Left" Margin="10,82,0,0" VerticalAlignment="Top" Width="240" PasswordChar="#" Height="20"/>
+        <Button Grid.Row="0" x:Name="ButtonConnect" Content="Connect" HorizontalAlignment="Left" Margin="284,82,0,0" VerticalAlignment="Top" Width="75" Click="ButtonConnect_Click1" Height="20"/>
         <Label Grid.Row="0" Content="Connect to BugReportDb" HorizontalAlignment="Left" Margin="0,10,0,0" VerticalAlignment="Top" Height="69" Width="445" FontSize="36" FontFamily="Calibri"/>
+        <Button x:Name="Reset" Content="Reset" HorizontalAlignment="Left" Margin="653,87,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="-0.012,1.179" Click="ButtonReset_Click1"/>
+        <RichTextBox x:Name="DataBox" HorizontalAlignment="Left" Height="193" Margin="121,37,0,0" Grid.Row="1" VerticalAlignment="Top" Width="607">
+            <FlowDocument/>
+        </RichTextBox>
+        <Label Content="Nuova PWD" HorizontalAlignment="Left" Margin="445,51,0,0" VerticalAlignment="Top"/>
+        <Label Content="pwd" HorizontalAlignment="Left" Margin="10,51,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="NewPwdField" HorizontalAlignment="Left" Height="23" Margin="497,83,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <RadioButton x:Name="UsrTable" Content="Users" HorizontalAlignment="Left" Margin="10,51,0,0" Grid.Row="1" VerticalAlignment="Top" Checked="RadioButton_Checked" Visibility="Hidden"/>
+        <RadioButton x:Name="Products" Content="Products" HorizontalAlignment="Left" Margin="10,82,0,0" Grid.Row="1" VerticalAlignment="Top" Checked="RadioButton_Checked" Visibility="Hidden"/>
+        <RadioButton Content="Users" HorizontalAlignment="Left" Margin="10,115,0,0" Grid.Row="1" VerticalAlignment="Top" Checked="RadioButton_Checked" Visibility="Hidden"/>
 
     </Grid>
 </Window>

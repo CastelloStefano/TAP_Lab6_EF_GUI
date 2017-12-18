@@ -22,56 +22,72 @@ namespace UserInterface
     /// </summary>
     public partial class MainWindow : Window
     {
+        private BugReportContext Db;
         public MainWindow()
         {
             InitializeComponent();
 
 
         }
-    
+
+        private void ButtonReset_Click1(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("|"+NewPwdField.Text+"|");
+            Factory.InitializeBugTracking(null, NewPwdField.Text);
+        }
+
         private void ButtonConnect_Click1(object sender, RoutedEventArgs e)
         {
-            string pwd = Adminpwd.Password;
+            MessageBox.Show(Adminpwd.Password);
+            Db = Factory.LoadBugTracking(null,Adminpwd.Password);
+            UsrTable.Visibility = 0;
+            Products.Visibility = 0;
 
-            Factory.InitializeBugTracking("","Password");
+            //var user1 = new Utente()
+            //{
+            //    Name = "Stefano",
+            //    Surname = "Castello",
+            //    Dob = new DateTime(93, 12, 12),
+            //    CodFisc = "CSTSFN93D12D969U",
+            //    Age = 24,
+            //    LogIn = "pwd",
+            //    Indirizzo = new Address() { Civico = 9, Interno = 2, Via = "viale Villa Chiesa" }
+            //};
+            //var user2 = new Utente()
+            //{
+            //    Name = "Giorgio",
+            //    Surname = "Castello",
+            //    Dob = new DateTime(60, 07, 20),
+            //    CodFisc = "CSTGRG60L20D969A",
+            //    Age = 57,
+            //    LogIn = "pwwd",
+            //    Indirizzo = new Address() { Civico = 9, Interno = 2, Via = "viale Villa Chiesa" }
+            //};
 
-            using (var db = Factory.LoadBugTracking(null, pwd))
-            {
-                var user1 = new Utente()
-                {
-                    Name = "Stefano",
-                    Surname = "Castello",
-                    Dob = new DateTime(93, 12, 12),
-                    CodFisc = "CSTSFN93D12D969U",
-                    Age = 24,
-                    LogIn = "pwd",
-                    Indirizzo = new Address() { Civico = 9, Interno = 2, Via = "viale Villa Chiesa" }
-                };
-                var user2 = new Utente()
-                {
-                    Name = "Giorgio",
-                    Surname = "Castello",
-                    Dob = new DateTime(60, 07, 20),
-                    CodFisc = "CSTGRG60L20D969A",
-                    Age = 57,
-                    LogIn = "pwwd",
-                    Indirizzo = new Address() { Civico = 9, Interno = 2, Via = "viale Villa Chiesa" }
-                };
+            //db.Users.Add(user1);
+            //db.Users.Add(user2);
+            //db.SaveChanges();
 
-                db.Users.Add(user1);
-                db.Users.Add(user2);
-                db.SaveChanges();
-
-                var query = from u in db.Users
-                    select u.CodFisc;
-                foreach (var q in query)
-                {
-                    //Console.WriteLine(q);
-                    MessageBox.Show(q);
-                }
+            var query = from u in Db.Users
+                        select new{ u.Name, u.Surname, u.Dob, u.CodFisc, u.Indirizzo};
+            foreach (var q in query)
+                DataBox.AppendText(q.Name + "\t" + q.Surname + "\t" + q.CodFisc + "\t" + q.Dob + "\t" + q.Indirizzo);
 
 
-            }
+        }
+
+        private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
+
+        private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+        }
+
+        private void RadioButton_Checked(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }
