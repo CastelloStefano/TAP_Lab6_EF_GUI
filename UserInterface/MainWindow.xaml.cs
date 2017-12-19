@@ -7,9 +7,6 @@ using Database;
 
 namespace UserInterface
 {
-    /// <summary>
-    /// Logica di interazione per MainWindow.xaml
-    /// </summary>
     public partial class MainWindow : Window
     {
         private BugReportContext Db;
@@ -34,6 +31,7 @@ namespace UserInterface
             DataBox.AppendText("Connected !");
             UsrTable.Visibility = 0;
             Products.Visibility = 0;
+            
 
             //var user1 = new Utente()
             //{
@@ -70,7 +68,7 @@ namespace UserInterface
                 select new {u.Name, u.Surname, u.Dob, u.CodFisc, u.Indirizzo};
             foreach (var q in query)
                 DataBox.AppendText(q.Name + "\t" + q.Surname + "\t" + q.CodFisc + "\t" + q.Dob + "\t" +
-                                   q.Indirizzo.Via + "\t" + q.Indirizzo.Civico + "\t" + q.Indirizzo.Interno);
+                                   q.Indirizzo.Via + "\t" + q.Indirizzo.Civico + "\t" + q.Indirizzo.Interno + "\n");
 
         }
 
@@ -80,7 +78,8 @@ namespace UserInterface
             var query = from p in Db.Products
                 select new {p.CommName, p.Id};
             foreach (var q in query)
-                DataBox.AppendText(q.CommName + "\t" + q.Id);
+                DataBox.AppendText(q.CommName + "\t" + q.Id + "\n");
         }
+
     }
 }
