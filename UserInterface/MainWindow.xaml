@@ -1,9 +1,8 @@
-﻿<Window x:Name="TAPEF" x:Class="UserInterface.MainWindow"
+﻿<Window x:Name="Tapef" x:Class="UserInterface.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:UserInterface"
         mc:Ignorable="d"
         Title="DataBase Tool" Height="445.953" Width="790.013">
     <Grid Margin="21,18,10,23" RenderTransformOrigin="0.505,0.522">
@@ -11,18 +10,18 @@
             <RowDefinition Height="115*"/>
             <RowDefinition Height="259*"/>
         </Grid.RowDefinitions>
-        <PasswordBox x:Name="Adminpwd" HorizontalAlignment="Left" Margin="10,82,0,0" VerticalAlignment="Top" Width="240" PasswordChar="#" Height="20"/>
+        <PasswordBox x:Name="Adminpwd" HorizontalAlignment="Left" Margin="80,82,0,0" VerticalAlignment="Top" Width="170" PasswordChar="#" Height="20"/>
         <Button Grid.Row="0" x:Name="ButtonConnect" Content="Connect" HorizontalAlignment="Left" Margin="284,82,0,0" VerticalAlignment="Top" Width="75" Click="ButtonConnect_Click1" Height="20"/>
-        <Label Grid.Row="0" Content="Connect to BugReportDb" HorizontalAlignment="Left" Margin="0,10,0,0" VerticalAlignment="Top" Height="69" Width="445" FontSize="36" FontFamily="Calibri"/>
-        <Button x:Name="Reset" Content="Reset" HorizontalAlignment="Left" Margin="653,87,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="-0.012,1.179" Click="ButtonReset_Click1"/>
+        <Label Grid.Row="0" Content="BugReportDb GUI" HorizontalAlignment="Left" Margin="0,10,0,0" VerticalAlignment="Top" Height="54" Width="271" FontSize="36" FontFamily="Calibri"/>
+        <Button Grid.Row="0" x:Name="Reset" Content="Reset" HorizontalAlignment="Left" Margin="653,87,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="-0.012,1.179" Click="ButtonReset_Click1"/>
         <RichTextBox x:Name="DataBox" HorizontalAlignment="Left" Height="193" Margin="121,37,0,0" Grid.Row="1" VerticalAlignment="Top" Width="607">
             <FlowDocument/>
         </RichTextBox>
-        <Label Content="Nuova PWD" HorizontalAlignment="Left" Margin="445,51,0,0" VerticalAlignment="Top"/>
-        <Label Content="pwd" HorizontalAlignment="Left" Margin="10,51,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="NewPwdField" HorizontalAlignment="Left" Height="23" Margin="497,83,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <RadioButton x:Name="UsrTable" Content="Users" HorizontalAlignment="Left" Margin="10,51,0,0" Grid.Row="1" VerticalAlignment="Top" Checked="RadioButton_Checked" Visibility="Hidden"/>
-        <RadioButton x:Name="Products" Content="Products" HorizontalAlignment="Left" Margin="10,82,0,0" Grid.Row="1" VerticalAlignment="Top" Checked="RadioButton_Checked" Visibility="Hidden"/>
+        <Label Grid.Row="0" Content="Nuova PWD" HorizontalAlignment="Left" Margin="412,79,0,0" VerticalAlignment="Top"/>
+        <Label Grid.Row="0" Content="Password :" HorizontalAlignment="Left" Margin="10,77,0,0" VerticalAlignment="Top" Height="28"/>
+        <TextBox Grid.Row="0" x:Name="NewPwdField" HorizontalAlignment="Left" Height="23" Margin="497,83,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <RadioButton x:Name="UsrTable" Content="Users" IsChecked="False" Click="RadioButton_Checked" HorizontalAlignment="Left" Margin="10,51,0,0" Grid.Row="1" VerticalAlignment="Top" Checked="RadioButton_Checked" Visibility="Hidden"/>
+        <RadioButton x:Name="Products" Content="Products" HorizontalAlignment="Left" Margin="10,82,0,0" Click="RadioButton_Checked2" Grid.Row="1" VerticalAlignment="Top" Checked="RadioButton_Checked" Visibility="Hidden"/>
         <RadioButton Content="Users" HorizontalAlignment="Left" Margin="10,115,0,0" Grid.Row="1" VerticalAlignment="Top" Checked="RadioButton_Checked" Visibility="Hidden"/>
 
     </Grid>
